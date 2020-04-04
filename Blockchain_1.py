@@ -14,7 +14,7 @@ genesis_block = {
 
    'transaction': [],
 
-   'nonce': 2018
+   'nonce': 0
    #It is used in mining process
 
 }
@@ -34,8 +34,8 @@ def valid_proof(transactions, last_hash, nonce):
    last_chars = guess_hash[-10:]
    #We have reduced the print to last 10 characters of each verification
    print(last_chars)
-   #if first two characters is equal to 00 , it means it belongs to this specific blockchain
-   return guess_hash[0:2] == '2018'
+   #if first 4 characters is equal to 2018 , it means it belongs to this specific blockchain
+   return guess_hash[-4:] == '2018'
 
 
 def pow():
